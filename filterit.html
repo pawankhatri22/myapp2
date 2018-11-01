@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filter by User References</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="filterapp" ng-controller="filtercontroller">
+		<input type="text" ng-model='filtervalue'>
+		<ul>
+			<li ng-repeat="x in names | filter: filtervalue" >
+				{{x}}
+			</li>	
+		<ul>
+	</div>
+<script type="text/javascript">
+	var app = angular.module("filterapp",[]);
+	app.controller("filtercontroller",function($scope){
+		$scope.filtervalue="";
+		$scope.names=[
+                'Jani',
+        'Carl',
+        'Margareth',
+        'Hege',
+        'Joe',
+        'Gustav',
+        'Birgit',
+        'Mary',
+        'Kai'
+		];
+	});
+</script>
+</body>
+</html>

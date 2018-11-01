@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Js</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body >
+<div ng-app="myApp"  ng-controller ='myCtrl' ng-init="mycol='lightblue'">
+  Enter the name : <input type="text" ng-model="secname">
+  <br> The name entered by you is <span ng-bind ="secname"></span><br>
+   FirstName: <input type="text" ng-model="firstname"><br>
+   LastName:<input type="type" ng-model="lastname"><br>
+   <br>
+
+   {{firstname + " "}}
+
+   <br><input style="background-color: {{mycol}}"type="text"  ng-model="mycol">
+
+
+   <h1 ng-click="changeName()">{{clickme}}</h1>
+
+
+
+</div>
+
+<script type="text/javascript">
+	var app = angular.module('myApp',[]);
+	app.controller("myCtrl",function($scope){
+		$scope.firstname ="Jhon";
+		$scope.lastname="dave";
+		$scope.clickme="before click";
+		$scope.changeName = function()
+		{
+			$scope.clickme= "after click";
+		}
+	})
+</script>
+
+
+</body>
+</html>
